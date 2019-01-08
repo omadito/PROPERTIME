@@ -1,0 +1,63 @@
+﻿<%@ Page Title="Departamentos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="departamento.aspx.cs" Inherits="ProperTimeToGo.departamento" %>
+
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <script>
+        function MenuItemClic(s, e){
+            switch (e.item.name)
+            {
+                case "mnuNuevo":
+                    var strLlave = trlDepartamentos.GetFocusedNodeKey();      
+                    console.log(strLlave);
+                    if (trlDepartamentos.IsEditing)
+                    {
+                        trlDepartamentos.UpdateEdit();
+               }
+                    trlDepartamentos.StartEditNewNode(strLlave);
+                    break;
+
+            }
+        }
+    </script>
+    <dx:ASPxMenu ID="mnuDepartamento" ClientInstanceName="mnuDepartamento" runat="server" Theme="MetropolisBlue">
+        <ClientSideEvents ItemClick="MenuItemClic" />
+    </dx:ASPxMenu>
+    <%--<dx:ASPxGridView ID="grvDepartamentos" ClientInstanceName="grvDepartamentos" runat="server" Theme="Office365" Width="100%" OnRowDeleting="grvDepartamentos_RowDeleting" OnRowInserting="grvDepartamentos_RowInserting" OnRowUpdating="grvDepartamentos_RowUpdating" Settings-VerticalScrollBarMode="Auto">
+        <SettingsAdaptivity>
+            <AdaptiveDetailLayoutProperties ColCount="1">
+            </AdaptiveDetailLayoutProperties>
+        </SettingsAdaptivity>
+        <SettingsPager Visible="False">
+        </SettingsPager>
+        <EditFormLayoutProperties ColCount="1">
+        </EditFormLayoutProperties>
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" Width="80px">
+            </dx:GridViewCommandColumn>
+        </Columns>
+    </dx:ASPxGridView>--%>
+    <dx:ASPxTreeList ID="trlDepartamentos" ClientInstanceName="trlDepartamentos" runat="server" 
+        OnCellEditorInitialize="trlDepartamentos_CellEditorInitialize" OnInitNewNode="trlDepartamentos_InitNewNode" >
+
+        <Settings ShowColumnHeaders="False" ShowTreeLines="False" />
+<SettingsBehavior AllowAutoFilter="True" AllowFocusedNode="True"></SettingsBehavior>
+
+<SettingsCustomizationWindow PopupHorizontalAlign="RightSides" PopupVerticalAlign="BottomSides"></SettingsCustomizationWindow>
+
+        <SettingsEditing AllowNodeDragDrop="True" Mode="Batch">
+            <BatchEditSettings ConfirmDelete="True" />
+        </SettingsEditing>
+
+<SettingsPopupEditForm VerticalOffset="-1"></SettingsPopupEditForm>
+
+
+
+
+</dx:ASPxTreeList>
+
+
+
+</asp:Content>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bf97a1ed-c14b-4638-b0e5-591936a10c61" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/WcfProperTime/ServicioProperTime.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioProperTime.xsd" MetadataType="Schema" ID="5369397f-6b81-489f-9488-fa249ed8f46f" SourceId="1" SourceUrl="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServicioProperTime1.xsd" MetadataType="Schema" ID="4dbd8f5a-8ff8-4718-b330-e44fbd79f02b" SourceId="1" SourceUrl="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioProperTime2.xsd" MetadataType="Schema" ID="f2bff772-84f2-45a4-a2e9-cca2f1c269d8" SourceId="1" SourceUrl="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioProperTime.disco" MetadataType="Disco" ID="04436852-f65b-468b-8fba-a2e473a47d42" SourceId="1" SourceUrl="http://localhost/WcfProperTime/ServicioProperTime.svc?disco" />
+    <MetadataFile FileName="ServicioProperTime3.xsd" MetadataType="Schema" ID="27ac5369-0fa8-4094-af7e-c3476ceced88" SourceId="1" SourceUrl="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioProperTime.wsdl" MetadataType="Wsdl" ID="ce2dde57-051c-4907-a477-ddddca24e869" SourceId="1" SourceUrl="http://localhost/WcfProperTime/ServicioProperTime.svc?wsdl" />
+    <MetadataFile FileName="ServicioProperTime4.xsd" MetadataType="Schema" ID="e30973ea-c725-4ff8-9f5c-9a923ff27867" SourceId="1" SourceUrl="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

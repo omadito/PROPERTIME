@@ -1,0 +1,21 @@
+﻿<%@ Page Title="Grupos Salariales" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="grupossalariales.aspx.cs" Inherits="ProperTimeToGo.grupossalariales" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <dx:ASPxGridView ID="grvGrupoSalarial" runat="server" Theme="Office365" Width="100%" 
+        OnRowDeleting="grvGrupoSalarial_RowDeleting" OnRowInserting="grvGrupoSalarial_RowInserting" OnRowUpdating="grvGrupoSalarial_RowUpdating">
+        <SettingsAdaptivity>
+            <AdaptiveDetailLayoutProperties ColCount="1">
+            </AdaptiveDetailLayoutProperties>
+        </SettingsAdaptivity>
+        <SettingsPager Visible="False">
+        </SettingsPager>
+        <EditFormLayoutProperties ColCount="1">
+        </EditFormLayoutProperties>
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" Width="80px">
+            </dx:GridViewCommandColumn>
+        </Columns>
+    </dx:ASPxGridView>
+</asp:Content>

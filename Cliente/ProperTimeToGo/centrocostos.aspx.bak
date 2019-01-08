@@ -1,0 +1,13 @@
+﻿<%@ Page Title="Cenro de Costos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="centrocostos.aspx.cs" Inherits="ProperTimeToGo.centrocostos" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <dx:ASPxGridView ID="grvCentroCostos" ClientInstanceName="grvCentroCostos" runat="server" Theme="Office365" Width="100%" OnRowDeleting="grvCentroCostos_RowDeleting" OnRowInserting="grvCentroCostos_RowInserting" OnRowUpdating="grvCentroCostos_RowUpdating" Settings-VerticalScrollBarMode="Auto">
+        <SettingsPager Visible="False"></SettingsPager>
+        <Columns>
+            <dx:GridViewCommandColumn ShowNewButtonInHeader="True" VisibleIndex="0" ShowDeleteButton="True" Width="80px"></dx:GridViewCommandColumn>
+        </Columns>
+    </dx:ASPxGridView>
+</asp:Content>

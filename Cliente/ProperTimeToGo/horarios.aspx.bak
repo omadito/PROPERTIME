@@ -1,0 +1,14 @@
+﻿<%@ Page Title="Horarios" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="horarios.aspx.cs" Inherits="ProperTimeToGo.horarios" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <dx:ASPxGridView ID="grvHorarios" ClientInstanceName="grdHorarios" runat="server" Theme="Office365" 
+        OnRowDeleting="grdHorarios_RowDeleting" OnRowInserting="grdHorarios_RowInserting" 
+        OnRowUpdating="grdHorarios_RowUpdating" Width="100%" OnRowValidating="grvHorarios_RowValidating">
+        <SettingsPager Visible="False"></SettingsPager>
+
+        <Columns>
+            <dx:GridViewCommandColumn ShowEditButton="True" VisibleIndex="0" ShowNewButtonInHeader="True" ShowDeleteButton="True"></dx:GridViewCommandColumn>
+        </Columns>
+    </dx:ASPxGridView>
+</asp:Content>

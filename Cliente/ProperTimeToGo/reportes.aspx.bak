@@ -1,0 +1,56 @@
+﻿<%@ Page Title="Reportes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="reportes.aspx.cs" Inherits="ProperTimeToGo.reportes" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+        window.onload = function (event) {
+            AdjustSize1();
+        }
+
+        window.onresize = function (event) {
+            AdjustSize1();
+        };
+
+        function AdjustSize1() {
+            var height = Math.max(0, document.documentElement.clientHeight);
+            
+            var altoAreducir = 50 + 30 + 110;
+                ASPxGridView1.SetHeight(height - altoAreducir);
+        }
+    </script>
+    <dx:ASPxMenu ID="ASPxMenu1" runat="server">
+        <Items>
+            <dx:MenuItem Text="Reportes">
+                <Items>
+                    <dx:MenuItem GroupName="Calculo" Text="C&#225;lculo Asistencia"></dx:MenuItem>
+                    <dx:MenuItem GroupName="Calculo" Text="C&#225;lculo Sin Horarios"></dx:MenuItem>
+                    <dx:MenuItem GroupName="Calculo" Text="C&#225;lculo Personalizado"></dx:MenuItem>
+                    <dx:MenuItem GroupName="Calculo" Text="Consulta Historial"></dx:MenuItem>
+                    <dx:MenuItem Text="Marcaciones"></dx:MenuItem>
+                    <dx:MenuItem Text="Marc.Manuales"></dx:MenuItem>
+                    <dx:MenuItem Text="Sin Marcaciones"></dx:MenuItem>
+                    <dx:MenuItem Text="Permisos"></dx:MenuItem>
+                    <dx:MenuItem Text="Cumplea&#241;os"></dx:MenuItem>
+                    <dx:MenuItem Text="Aniversarios"></dx:MenuItem>
+                    <dx:MenuItem Text="Contratados"></dx:MenuItem>
+                    <dx:MenuItem Text="Exportar Marcaciones MRL"></dx:MenuItem>
+                </Items>
+            </dx:MenuItem>
+        </Items>
+    </dx:ASPxMenu>
+    <dx:ASPxGridView ID="ASPxGridView1" ClientInstanceName="ASPxGridView1" runat="server" KeyFieldName="NumCa" Theme="MetropolisBlue" Width="100%">
+        <SettingsAdaptivity>
+            <AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
+        </SettingsAdaptivity>
+
+        <SettingsPager Mode="ShowAllRecords" Visible="False">
+        </SettingsPager>
+
+        <Settings ShowHeaderFilterButton="True" HorizontalScrollBarMode="Auto" VerticalScrollableHeight="400" VerticalScrollBarMode="Auto" />
+        <SettingsBehavior AllowCellMerge="true" />
+        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+        <SettingsLoadingPanel Mode="ShowAsPopup" />
+        <EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
+    </dx:ASPxGridView>
+</asp:Content>

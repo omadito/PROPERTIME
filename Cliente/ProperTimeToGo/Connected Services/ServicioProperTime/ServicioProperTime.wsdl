@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioProperTime" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProperTime.WcfProperTime" />
+      <xsd:import schemaLocation="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost/WcfProperTime/ServicioProperTime.svc?xsd=xsd4" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioProperTime_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_GuardarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_GuardarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornaEmpleados_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornaEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornaEmpleados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornaEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarDepartamentosArbol_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarDepartamentosArbol" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarDepartamentosArbol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarDepartamentosArbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarGrupoSalarial_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarGrupoSalarial" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarGrupoSalarial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarGrupoSalarialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarTipoSangre_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarTipoSangre" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarTipoSangre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarTipoSangreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarEstadoCivil_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarEstadoCivil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarEstadoCivil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarEstadoCivilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarTipoCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarTipoCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarTipoCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarTipoCuentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarCentroCostos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarCentroCostos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarCentroCostos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarCentroCostosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarContrato" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarCiudad_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarCiudad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarCiudad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarFotos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarFotos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarFotos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarFotosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarEmpleado_v1_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEmpleado_v1" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarEmpleado_v1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEmpleado_v1Response" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarCentroCosto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCentroCosto" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarCentroCosto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCentroCostoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarCiudad_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCiudad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarCiudad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarCiudad_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCiudad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarCiudad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarCiudad_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCiudad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarCiudad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarCentroCostos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCentroCostos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarCentroCostos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCentroCostosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarCentroCostos_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCentroCostos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarCentroCostos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCentroCostosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarFeriado_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarFeriado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarFeriado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarFeriadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarFeriado_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarFeriado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarFeriado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarFeriadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarFeriado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarFeriado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarFeriado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarFeriadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarHorario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarHorario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarHorario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarHorarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarHorario_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarHorario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarHorario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarHorarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarHorario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarHorario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarHorario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarHorarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarGrupoSalarial_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarGrupoSalarial" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarGrupoSalarial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarGrupoSalarialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarGrupoSalarial_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarGrupoSalarial" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarGrupoSalarial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarGrupoSalarialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarGrupoSalarial_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGrupoSalarial" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarGrupoSalarial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarGrupoSalarialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarTipoPermiso_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarTipoPermiso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarTipoPermiso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarTipoPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarTipoPermiso_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTipoPermiso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarTipoPermiso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTipoPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarTipoPermiso_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoPermiso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarTipoPermiso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarSeleccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSeleccion" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarSeleccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarSeleccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarClasificar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarClasificar" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarClasificar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarClasificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarCostoComida_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarCostoComida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarCostoComida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarCostoComidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarCostoComida_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCostoComida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarCostoComida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCostoComidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarCostoComida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCostoComida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarCostoComida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCostoComidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_AdministrarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarDatosLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarDatosLogin" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarDatosLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarDatosLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarGrupoMenuPantalla_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarGrupoMenuPantalla" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarGrupoMenuPantalla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarGrupoMenuPantallaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarMenuBotonAcceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarMenuBotonAcceso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_RetornarMenuBotonAcceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarMenuBotonAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_InsertarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ActualizarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_EliminarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarBoton_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBoton" />
+  </wsdl:message>
+  <wsdl:message name="IServicioProperTime_ConsultarBoton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarBotonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioProperTime">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/GetData" message="tns:IServicioProperTime_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/GetDataResponse" message="tns:IServicioProperTime_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/GetDataUsingDataContract" message="tns:IServicioProperTime_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/GetDataUsingDataContractResponse" message="tns:IServicioProperTime_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/GuardarEmpleado" message="tns:IServicioProperTime_GuardarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/GuardarEmpleadoResponse" message="tns:IServicioProperTime_GuardarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornaEmpleados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornaEmpleados" message="tns:IServicioProperTime_RetornaEmpleados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornaEmpleadosResponse" message="tns:IServicioProperTime_RetornaEmpleados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarDepartamentosArbol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarDepartamentosArbol" message="tns:IServicioProperTime_RetornarDepartamentosArbol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarDepartamentosArbolResponse" message="tns:IServicioProperTime_RetornarDepartamentosArbol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupoSalarial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarGrupoSalarial" message="tns:IServicioProperTime_RetornarGrupoSalarial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarGrupoSalarialResponse" message="tns:IServicioProperTime_RetornarGrupoSalarial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarTipoSangre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarTipoSangre" message="tns:IServicioProperTime_RetornarTipoSangre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarTipoSangreResponse" message="tns:IServicioProperTime_RetornarTipoSangre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstadoCivil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarEstadoCivil" message="tns:IServicioProperTime_RetornarEstadoCivil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarEstadoCivilResponse" message="tns:IServicioProperTime_RetornarEstadoCivil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarTipoCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarTipoCuenta" message="tns:IServicioProperTime_RetornarTipoCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarTipoCuentaResponse" message="tns:IServicioProperTime_RetornarTipoCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarCentroCostos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarCentroCostos" message="tns:IServicioProperTime_RetornarCentroCostos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarCentroCostosResponse" message="tns:IServicioProperTime_RetornarCentroCostos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarContrato" message="tns:IServicioProperTime_RetornarContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarContratoResponse" message="tns:IServicioProperTime_RetornarContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarCiudad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarCiudad" message="tns:IServicioProperTime_RetornarCiudad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarCiudadResponse" message="tns:IServicioProperTime_RetornarCiudad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarFotos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarFotos" message="tns:IServicioProperTime_RetornarFotos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarFotosResponse" message="tns:IServicioProperTime_RetornarFotos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEmpleado_v1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarEmpleado_v1" message="tns:IServicioProperTime_InsertarEmpleado_v1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarEmpleado_v1Response" message="tns:IServicioProperTime_InsertarEmpleado_v1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarDepartamento" message="tns:IServicioProperTime_ActualizarDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarDepartamentoResponse" message="tns:IServicioProperTime_ActualizarDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarDepartamento" message="tns:IServicioProperTime_InsertarDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarDepartamentoResponse" message="tns:IServicioProperTime_InsertarDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCentroCosto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarCentroCosto" message="tns:IServicioProperTime_InsertarCentroCosto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarCentroCostoResponse" message="tns:IServicioProperTime_InsertarCentroCosto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCiudad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarCiudad" message="tns:IServicioProperTime_InsertarCiudad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarCiudadResponse" message="tns:IServicioProperTime_InsertarCiudad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCiudad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarCiudad" message="tns:IServicioProperTime_ActualizarCiudad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarCiudadResponse" message="tns:IServicioProperTime_ActualizarCiudad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCiudad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarCiudad" message="tns:IServicioProperTime_EliminarCiudad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarCiudadResponse" message="tns:IServicioProperTime_EliminarCiudad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCentroCostos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarCentroCostos" message="tns:IServicioProperTime_ActualizarCentroCostos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarCentroCostosResponse" message="tns:IServicioProperTime_ActualizarCentroCostos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCentroCostos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarCentroCostos" message="tns:IServicioProperTime_EliminarCentroCostos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarCentroCostosResponse" message="tns:IServicioProperTime_EliminarCentroCostos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarFeriado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarFeriado" message="tns:IServicioProperTime_AdministrarFeriado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarFeriadoResponse" message="tns:IServicioProperTime_AdministrarFeriado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarFeriado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarFeriado" message="tns:IServicioProperTime_EliminarFeriado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarFeriadoResponse" message="tns:IServicioProperTime_EliminarFeriado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFeriado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarFeriado" message="tns:IServicioProperTime_ConsultarFeriado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarFeriadoResponse" message="tns:IServicioProperTime_ConsultarFeriado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarHorario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarHorario" message="tns:IServicioProperTime_AdministrarHorario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarHorarioResponse" message="tns:IServicioProperTime_AdministrarHorario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHorario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarHorario" message="tns:IServicioProperTime_EliminarHorario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarHorarioResponse" message="tns:IServicioProperTime_EliminarHorario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarHorario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarHorario" message="tns:IServicioProperTime_ConsultarHorario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarHorarioResponse" message="tns:IServicioProperTime_ConsultarHorario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarGrupoSalarial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarGrupoSalarial" message="tns:IServicioProperTime_AdministrarGrupoSalarial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarGrupoSalarialResponse" message="tns:IServicioProperTime_AdministrarGrupoSalarial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarGrupoSalarial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarGrupoSalarial" message="tns:IServicioProperTime_EliminarGrupoSalarial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarGrupoSalarialResponse" message="tns:IServicioProperTime_EliminarGrupoSalarial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGrupoSalarial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarGrupoSalarial" message="tns:IServicioProperTime_ConsultarGrupoSalarial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarGrupoSalarialResponse" message="tns:IServicioProperTime_ConsultarGrupoSalarial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarTipoPermiso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarTipoPermiso" message="tns:IServicioProperTime_AdministrarTipoPermiso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarTipoPermisoResponse" message="tns:IServicioProperTime_AdministrarTipoPermiso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipoPermiso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarTipoPermiso" message="tns:IServicioProperTime_EliminarTipoPermiso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarTipoPermisoResponse" message="tns:IServicioProperTime_EliminarTipoPermiso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoPermiso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarTipoPermiso" message="tns:IServicioProperTime_ConsultarTipoPermiso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarTipoPermisoResponse" message="tns:IServicioProperTime_ConsultarTipoPermiso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSeleccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarSeleccion" message="tns:IServicioProperTime_ConsultarSeleccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarSeleccionResponse" message="tns:IServicioProperTime_ConsultarSeleccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClasificar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarClasificar" message="tns:IServicioProperTime_ConsultarClasificar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarClasificarResponse" message="tns:IServicioProperTime_ConsultarClasificar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarCostoComida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarCostoComida" message="tns:IServicioProperTime_AdministrarCostoComida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarCostoComidaResponse" message="tns:IServicioProperTime_AdministrarCostoComida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCostoComida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarCostoComida" message="tns:IServicioProperTime_EliminarCostoComida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarCostoComidaResponse" message="tns:IServicioProperTime_EliminarCostoComida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCostoComida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarCostoComida" message="tns:IServicioProperTime_ConsultarCostoComida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarCostoComidaResponse" message="tns:IServicioProperTime_ConsultarCostoComida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarTurno" message="tns:IServicioProperTime_AdministrarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/AdministrarTurnoResponse" message="tns:IServicioProperTime_AdministrarTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarTurno" message="tns:IServicioProperTime_EliminarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarTurnoResponse" message="tns:IServicioProperTime_EliminarTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarTurno" message="tns:IServicioProperTime_ConsultarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarTurnoResponse" message="tns:IServicioProperTime_ConsultarTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarDatosLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarDatosLogin" message="tns:IServicioProperTime_RetornarDatosLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarDatosLoginResponse" message="tns:IServicioProperTime_RetornarDatosLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupoMenuPantalla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarGrupoMenuPantalla" message="tns:IServicioProperTime_RetornarGrupoMenuPantalla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarGrupoMenuPantallaResponse" message="tns:IServicioProperTime_RetornarGrupoMenuPantalla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarMenuBotonAcceso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarMenuBotonAcceso" message="tns:IServicioProperTime_RetornarMenuBotonAcceso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/RetornarMenuBotonAccesoResponse" message="tns:IServicioProperTime_RetornarMenuBotonAcceso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarEmpleado" message="tns:IServicioProperTime_InsertarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/InsertarEmpleadoResponse" message="tns:IServicioProperTime_InsertarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarEmpleado" message="tns:IServicioProperTime_ActualizarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ActualizarEmpleadoResponse" message="tns:IServicioProperTime_ActualizarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarEmpleado" message="tns:IServicioProperTime_EliminarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/EliminarEmpleadoResponse" message="tns:IServicioProperTime_EliminarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarEmpleado" message="tns:IServicioProperTime_ConsultarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarEmpleadoResponse" message="tns:IServicioProperTime_ConsultarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBoton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarBoton" message="tns:IServicioProperTime_ConsultarBoton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioProperTime/ConsultarBotonResponse" message="tns:IServicioProperTime_ConsultarBoton_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioProperTime" type="tns:IServicioProperTime">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/GuardarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornaEmpleados">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornaEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarDepartamentosArbol">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarDepartamentosArbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupoSalarial">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarGrupoSalarial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarTipoSangre">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarTipoSangre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstadoCivil">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarEstadoCivil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarTipoCuenta">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarTipoCuenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarCentroCostos">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarCentroCostos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarContrato">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarCiudad">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarFotos">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarFotos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEmpleado_v1">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/InsertarEmpleado_v1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ActualizarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/InsertarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCentroCosto">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/InsertarCentroCosto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCiudad">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/InsertarCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCiudad">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ActualizarCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCiudad">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCentroCostos">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ActualizarCentroCostos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCentroCostos">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarCentroCostos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarFeriado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/AdministrarFeriado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarFeriado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarFeriado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFeriado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarFeriado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarHorario">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/AdministrarHorario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarHorario">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarHorario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarHorario">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarHorario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarGrupoSalarial">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/AdministrarGrupoSalarial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarGrupoSalarial">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarGrupoSalarial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarGrupoSalarial">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarGrupoSalarial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarTipoPermiso">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/AdministrarTipoPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTipoPermiso">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarTipoPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoPermiso">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarTipoPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSeleccion">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarSeleccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarClasificar">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarClasificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarCostoComida">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/AdministrarCostoComida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCostoComida">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarCostoComida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCostoComida">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarCostoComida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarTurno">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/AdministrarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTurno">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTurno">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarDatosLogin">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarDatosLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupoMenuPantalla">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarGrupoMenuPantalla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarMenuBotonAcceso">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/RetornarMenuBotonAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/InsertarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ActualizarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/EliminarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarBoton">
+      <soap:operation soapAction="http://tempuri.org/IServicioProperTime/ConsultarBoton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioProperTime">
+    <wsdl:port name="BasicHttpBinding_IServicioProperTime" binding="tns:BasicHttpBinding_IServicioProperTime">
+      <soap:address location="http://localhost/WcfProperTime/ServicioProperTime.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

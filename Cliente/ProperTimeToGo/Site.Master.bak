@@ -1,0 +1,242 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ProperTimeToGo.SiteMaster" %>
+
+
+
+<%@ Register Assembly="DevExpress.Web.ASPxTreeList.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeList" TagPrefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProperTimeToGo</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/Template.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function OnDepartmentChanged(s, e) {
+            trlEmpleadoRep.PerformCallback(s.GetFocusedNodeKey());
+        }
+    </script>
+    <style>
+        .dxsplLCC{
+            width:100%;
+        }
+    </style>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="content-principal">
+            <header class="content-cabecera">
+                <div class="content-logo">
+                    <img src="Imagenes/DerechoProperTime.jpg" />
+                </div>
+                <div class="content-usuario">
+                    <img src="Imagenes/usuarioDefault.jpg" class="usuario-default" />
+                    <label>Nombre</label>
+                </div>
+            </header>
+            <div style="clear: both;"></div>
+            <div class="panel-container">
+                <dx:ASPxSplitter ID="splContenedor" ClientInstanceName="splContenedor" runat="server" 
+                    EnableTheming="True" Theme="Office365" Width="100%" FullscreenMode="False">
+                    <Panes>
+                        <dx:SplitterPane AutoHeight="False" MaxSize="400px" MinSize="100px" Name="splPanelIzq" Size="200px" ShowCollapseBackwardButton="Default">
+                            <ContentCollection>
+                                <dx:SplitterContentControl runat="server">
+                                    <div id="navContent">
+                                        <div id="navHeaderContent">
+                                            <div id="mnuAdministracion" class="nav-menu ocultar" runat="server">
+                                                <img src="Imagenes/flecha-der.png" width="20" height="15"></img>
+                                                <dx:ASPxHyperLink ID="lnkAdministracion" runat="server" Text="Administración" NavigateUrl="~/departamento.aspx" Theme="Office365">
+                                                </dx:ASPxHyperLink>
+                                            </div>
+                                            <div id="mnuReportes" class="nav-menu active" runat="server">
+                                                <img src="Imagenes/flecha-izq.png" width="20" height="15"></img>
+                                                <dx:ASPxHyperLink ID="lnkReportes" runat="server" Text="Reportes" NavigateUrl="~/reportes.aspx" Theme="Office365">
+                                                </dx:ASPxHyperLink>
+                                            </div>
+                                        </div>
+                                        <div id="navPage1" class="active" runat="server">
+                                            <h4>Administración</h4>
+                                            <dx:ASPxTreeList ID="trlMenuPrincipal" ClientInstanceName="trlMenuPrincipal" runat="server" EnableTheming="True" Theme="Office365" Cursor="pointer" OnCustomCallback="trlMenuPrincipal_CustomCallback" Width="125%">
+                                                <Settings ShowColumnHeaders="False" ShowTreeLines="False" VerticalScrollBarMode="Auto" />
+                                                <SettingsBehavior AllowAutoFilter="True" AllowFocusedNode="True" />
+                                                <SettingsCustomizationWindow PopupHorizontalAlign="RightSides" PopupVerticalAlign="BottomSides" />
+                                                <SettingsPopupEditForm VerticalOffset="-1">
+                                                </SettingsPopupEditForm>
+                                                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                <SettingsPopup>
+                                                    <EditForm VerticalOffset="-1">
+                                                    </EditForm>
+                                                </SettingsPopup>
+                                                <ClientSideEvents NodeClick="function(s, e) { s.PerformCallback(e.nodeKey);}" />
+                                            </dx:ASPxTreeList>
+                                        </div>
+                                        <div id="navPage2" class="ocultar" runat="server">
+                                            <!---->
+                                            <h4>Reportes</h4>
+                                            <div id="content-par-rep">
+                                                <span>Reporte</span>
+                                                <table>
+                                                    <tr>
+                                                        <td>Desde:</td>
+                                                        <td>Domingo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <input type="date" id="dtmFechaDesdeReporte" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Hasta:</td>
+                                                        <td>Domingo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <input type="date" id="dtmFechaHastaReporte" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="separador"></div>
+                                            <div id="content-departamento">
+                                                <span>Departamento</span>
+                                                <dx:ASPxTreeList ID="trlEmpresaRep" ClientInstanceName="trlEmpresaRep" runat="server" AllowSelectNode="true" AllowCheckNodes="true"
+                                                    KeyFieldName="codNodo" ParentFieldName="codPadre" Width="125%" CheckNodesRecursive="true" Font-Size="10pt" Height="220px">
+                                                    <Settings ShowColumnHeaders="False" ShowFilterBar="Auto" VerticalScrollBarMode="Visible" ShowTreeLines="False" />
+                                                    <SettingsBehavior AllowAutoFilter="False"></SettingsBehavior>
+                                                    <SettingsCustomizationWindow PopupHorizontalAlign="RightSides" PopupVerticalAlign="BottomSides"></SettingsCustomizationWindow>
+                                                    <SettingsPopupEditForm VerticalOffset="-1"></SettingsPopupEditForm>
+                                                    <SettingsDataSecurity AllowEdit="False" AllowInsert="False" AllowDelete="False"></SettingsDataSecurity>
+                                                    <SettingsSelection Enabled="true" Recursive="true" AllowSelectAll="true" />
+                                                    <SettingsSearchPanel Visible="False" />
+                                                    <SettingsPopup>
+                                                        <EditForm VerticalOffset="-1"></EditForm>
+                                                    </SettingsPopup>
+                                                    <ClientSideEvents FocusedNodeChanged="OnDepartmentChanged" SelectionChanged="OnDepartmentChanged" />
+                                                </dx:ASPxTreeList>
+
+                                            </div>
+                                            <div class="separador"></div>
+                                            <div id="content-usuarios">
+                                                <span>Empleados</span>
+                                                <dx:ASPxTreeList ID="trlEmpleadoRep" ClientInstanceName="trlEmpleadoRep" runat="server" AllowSelectNode="true" AllowCheckNodes="true"
+                                                    KeyFieldName="Codigo" ParentFieldName="Padre" Width="125%" CheckNodesRecursive="true" Font-Size="10pt" Height="220px" OnCustomCallback="trvEmpleados_CustomCallback" OnSelectionChanged="trvEmpleados_SelectionChanged">
+                                                    <Settings ShowColumnHeaders="False" ShowFilterBar="Auto" VerticalScrollBarMode="Visible" ShowTreeLines="False" />
+                                                    <SettingsBehavior AllowAutoFilter="False"></SettingsBehavior>
+                                                    <SettingsCustomizationWindow PopupHorizontalAlign="RightSides" PopupVerticalAlign="BottomSides"></SettingsCustomizationWindow>
+                                                    <SettingsPopupEditForm VerticalOffset="-1"></SettingsPopupEditForm>
+                                                    <SettingsDataSecurity AllowEdit="False" AllowInsert="False" AllowDelete="False"></SettingsDataSecurity>
+                                                    <SettingsSelection Enabled="True" Recursive="true" AllowSelectAll="true" />
+                                                    <SettingsSearchPanel Visible="True" />
+                                                    <SettingsPopup>
+                                                        <EditForm VerticalOffset="-1"></EditForm>
+                                                    </SettingsPopup>
+                                                </dx:ASPxTreeList>
+                                            </div>
+                                        </div>
+                                        <!---->
+                                    </div>
+                                </dx:SplitterContentControl>
+                            </ContentCollection>
+                        </dx:SplitterPane>
+                        <dx:SplitterPane Name="splPanelDrq" Size="100%">
+                            <ContentCollection>
+                                <dx:SplitterContentControl runat="server">
+                                    <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                                </dx:SplitterContentControl>
+                            </ContentCollection>
+                        </dx:SplitterPane>
+                    </Panes>
+                    
+                </dx:ASPxSplitter>
+            </div>
+        </div>
+        <script type="text/javascript" src="/Scripts/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="Scripts/App.js"></script>
+        <script type="text/javascript">
+            window.onload = function (event) {
+                ResizeControlHight();
+            };
+            window.onresize = function (event) {
+                ResizeControlHight();
+            };
+
+            function ResizeControlHight() {
+                var height = Math.max(0, document.documentElement.clientHeight);
+                var heightSplitter = height - 90;
+                var width = Math.max(0, document.documentElement.clientWidth);
+
+                splContenedor.SetHeight(heightSplitter);
+                splContenedor.SetWidth(width -18);
+                //console.log("Daotos empleados1",grvDatosEmpleado);
+                if (typeof (trlMenuPrincipal) !== "undefined" && ASPxClientUtils.IsExists(trlMenuPrincipal)) {
+                    trlMenuPrincipal.SetHeight(heightSplitter - 30);
+                }
+                if (typeof (grvDatosEmpleado) !== "undefined" && ASPxClientUtils.IsExists(grvDatosEmpleado)) {
+                    grvDatosEmpleado.SetHeight(heightSplitter -100);
+                    $('.dxgvCSD').css({ 'height': (heightSplitter - 250) + 'px' });
+                    
+                }
+                if (typeof (grid) !== "undefined" && ASPxClientUtils.IsExists(grid)) {
+                    grid.SetHeight(heightSplitter - 30);                    
+                }
+                if (typeof (trlDepartamentos) !== "undefined" && ASPxClientUtils.IsExists(trlDepartamentos)) {
+                    trlDepartamentos.SetHeight(heightSplitter - 90);                    
+                }
+                if (typeof (grvEmpleados) !== "undefined" && ASPxClientUtils.IsExists(grvEmpleados)) {
+                    grvEmpleados.SetHeight(heightSplitter - 90);         
+                    grvEmpleados.SetWidth(width - 489);
+                } 
+                if (typeof (grvDepartamentos) !== "undefined" && ASPxClientUtils.IsExists(grvDepartamentos)) {
+                    grvDepartamentos.SetHeight(heightSplitter - 40);         
+                    //grvDepartamentos.SetWidth(width - 489);
+                } 
+                if (typeof (grvCentroCostos) !== "undefined" && ASPxClientUtils.IsExists(grvCentroCostos)) {
+                    grvCentroCostos.SetHeight(heightSplitter - 40);         
+                    //grvDepartamentos.SetWidth(width - 489);
+                } 
+                if (typeof (grvCiudades) !== "undefined" && ASPxClientUtils.IsExists(grvCiudades)) {
+                    grvCiudades.SetHeight(heightSplitter - 40);         
+                    //grvDepartamentos.SetWidth(width - 489);
+                }
+            }
+        </script>
+    </form>
+
+</body>
+</html>
